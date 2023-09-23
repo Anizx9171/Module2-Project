@@ -8,11 +8,24 @@ import PreLoader from "../../components/PreLoader";
 
 export default function Oder_Manager() {
   const [oders, setOders] = useState([]);
+  const [products, setProducts] = useState([]);
   const [load, setLoad] = useState(false);
 
   const handleDeny = async (odr) => {
     const { id, ...data } = odr;
     const index = oders.findIndex((e) => e.id == id);
+
+    await data.cart.map((od) => {
+      products.map(async (pro) => {
+        if (pro.id == od.idSP) {
+          pro.quantity += od.quantity;
+          await axios
+            .put(`http://localhost:9171/products/${pro.id}`, pro)
+            .then(console.log((response) => "ok"))
+            .catch(console.log((error) => "ko"));
+        }
+      });
+    });
 
     setLoad(true);
     await axios
@@ -34,6 +47,11 @@ export default function Oder_Manager() {
   };
 
   useEffect(() => {
+    axios
+      .get("http://localhost:9171/products")
+      .then((response) => setProducts(response.data))
+      .catch((error) => console.log(error));
+
     setLoad(true);
     axios
       .get(`http://localhost:9171/oders`)
