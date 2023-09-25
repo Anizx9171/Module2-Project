@@ -5,9 +5,7 @@ import { Link, useNavigate } from "react-router-dom";
 export default function Index() {
   const navigate = useNavigate();
   const userLocal = JSON.parse(localStorage.getItem("userLocal"));
-  if (userLocal.role == 0) {
-    navigate("/admin");
-  }
+
   return (
     <>
       <Headerr />

@@ -2,12 +2,17 @@ import React, { useState } from "react";
 import Headerr from "../../components/User/Headerr";
 import Footerr from "../../components/User/Footerr";
 import { useEffect } from "react";
-import { getDataCategories, getDataProducts } from "../../api/getAPI";
+import {
+  getDataCategories,
+  getDataProducts,
+  searchDataProducts,
+} from "../../api/getAPI";
 import { FomatMoney } from "./../../utils/FomatData";
 import PreLoader from "../../components/PreLoader";
 import { Link } from "react-router-dom";
-import { Pagination, notification } from "antd";
+import { Button, Input, Pagination, notification } from "antd";
 import axios from "axios";
+import { SearchOutlined } from "@ant-design/icons";
 
 export default function Shop() {
   const userLocal = JSON.parse(localStorage.getItem("userLocal")) || [];
@@ -17,6 +22,7 @@ export default function Shop() {
   const [categoryId, setCategoryId] = useState(-1);
   const [load, setLoad] = useState(false);
   const [cartUser, setCartUser] = useState([]);
+  const [textSearch, setTextSearch] = useState("");
 
   const [currentPage, setCurrentPage] = useState(1);
   const pageSize = 3;
@@ -75,6 +81,12 @@ export default function Shop() {
     await axios
       .get(`http://localhost:9171/carts/${cartId}`)
       .then((response) => setCartUser(response.data));
+  };
+
+  const handleSearchPro = () => {
+    searchDataProducts(textSearch)
+      .then((response) => setProducts(response.data))
+      .catch((error) => console.log(error));
   };
 
   const getDataProduct = () => {
@@ -161,6 +173,23 @@ export default function Shop() {
               </div>
               <div className="col-12 col-sm-12 col-md-12 col-lg-9 main-col flex flex-col justify-between">
                 <div className="products-grid">
+                  <div className="flex justify-end ml-6 mt-6">
+                    <div className="flex justify-center items-center bg-white p-1 gap-2 border rounded-md">
+                      <Button
+                        onClick={handleSearchPro}
+                        className=" w-10 h-10 flex justify-center items-center border-none"
+                      >
+                        <SearchOutlined />
+                      </Button>
+                      <Input
+                        type="text"
+                        className="max-w-md border-none"
+                        placeholder="...Search"
+                        value={textSearch}
+                        onChange={(e) => setTextSearch(e.target.value)}
+                      />
+                    </div>
+                  </div>
                   <div className="row flex items-end">
                     {currentProducts.map((pro) => (
                       <div

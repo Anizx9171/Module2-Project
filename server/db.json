@@ -40,44 +40,34 @@
   ],
   "products": [
     {
-      "id": 1,
-      "product_name": "Peugeot 208",
-      "category": "1",
-      "image": "https://car-data.carwow.co.uk/image?filter%5Bbrand_slug%5D=peugeot&filter%5Bcolour%5D=silver&filter%5Bmodel_review_slug%5D=208-2019",
-      "quantity": 3,
-      "price": 1040000000,
-      "form": "France",
-      "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam pariatur repellat a placeat! Optio perferendis sint, voluptas quaerat perspiciatis sapiente tenetur laudantium dolorem voluptate nobis quod sit dignissimos minus et. Enim sit nihil debitis incidunt itaque perferendis, asperiores quae voluptate, hic atque consequuntur totam! Laudantium, odit. Error autem sequi, quidem necessitatibus dicta illum saepe molestiae incidunt aut nostrum eum reprehenderit."
-    },
-    {
-      "id": 3,
       "product_name": "Mazda2 1.5 Sedan",
       "category": "2",
       "image": "https://heyoto.vn/wp-content/uploads/2020/04/Mazda-2-Sport-m%C3%A0u-Eternal-Blue.jpg",
-      "quantity": 2,
+      "quantity": -2,
       "price": 487230000,
       "form": "Europe",
-      "description": "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Fugit numquam et qui quo delectus provident velit. Aut alias dolorem sapiente magnam beatae dolore ipsum quaerat neque nemo ipsam, eveniet placeat. Rem, fugiat cum nobis explicabo sunt optio consequuntur praesentium eaque ad obcaecati, vitae sapiente iure pariatur sed eius laboriosam perspiciatis a voluptas quidem soluta quas in. Hic beatae temporibus totam."
+      "description": "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Fugit numquam et qui quo delectus provident velit. Aut alias dolorem sapiente magnam beatae dolore ipsum quaerat neque nemo ipsam, eveniet placeat. Rem, fugiat cum nobis explicabo sunt optio consequuntur praesentium eaque ad obcaecati, vitae sapiente iure pariatur sed eius laboriosam perspiciatis a voluptas quidem soluta quas in. Hic beatae temporibus totam.",
+      "id": 3
     },
     {
-      "id": 4,
       "product_name": "Mercedes-Benz C-Class",
       "category": "3",
       "image": "https://imgd.aeplcdn.com/664x374/n/cw/ec/116201/new-c-class-exterior-right-front-three-quarter-2.jpeg?isig=0&q=80&q=80",
-      "quantity": 7,
+      "quantity": -5,
       "price": 1599099900,
       "form": "Germany",
-      "description": "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Fugit numquam et qui quo delectus provident velit. Aut alias dolorem sapiente magnam beatae dolore ipsum quaerat neque nemo ipsam, eveniet placeat. Rem, fugiat cum nobis explicabo sunt optio consequuntur praesentium eaque ad obcaecati, vitae sapiente iure pariatur sed eius laboriosam perspiciatis a voluptas quidem soluta quas in. Hic beatae temporibus totam."
+      "description": "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Fugit numquam et qui quo delectus provident velit. Aut alias dolorem sapiente magnam beatae dolore ipsum quaerat neque nemo ipsam, eveniet placeat. Rem, fugiat cum nobis explicabo sunt optio consequuntur praesentium eaque ad obcaecati, vitae sapiente iure pariatur sed eius laboriosam perspiciatis a voluptas quidem soluta quas in. Hic beatae temporibus totam.",
+      "id": 4
     },
     {
-      "id": 5,
       "product_name": "BMW 4 Series Coupe",
       "category": "3",
       "image": "https://www.bmw.ca/content/dam/bmw/common/all-models/4-series/coupe/2021/navigation/bmw-4-series-coupe-modelfinder.png",
-      "quantity": 9,
+      "quantity": 2,
       "price": 2779000000,
       "form": "Germany",
-      "description": "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Fugit numquam et qui quo delectus provident velit. Aut alias dolorem sapiente magnam beatae dolore ipsum quaerat neque nemo ipsam, eveniet placeat. Rem, fugiat cum nobis explicabo sunt optio consequuntur praesentium eaque ad obcaecati, vitae sapiente iure pariatur sed eius laboriosam perspiciatis a voluptas quidem soluta quas in. Hic beatae temporibus totam."
+      "description": "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Fugit numquam et qui quo delectus provident velit. Aut alias dolorem sapiente magnam beatae dolore ipsum quaerat neque nemo ipsam, eveniet placeat. Rem, fugiat cum nobis explicabo sunt optio consequuntur praesentium eaque ad obcaecati, vitae sapiente iure pariatur sed eius laboriosam perspiciatis a voluptas quidem soluta quas in. Hic beatae temporibus totam.",
+      "id": 5
     },
     {
       "id": 6,
@@ -90,44 +80,34 @@
       "description": " Hyundai Santa Fe là một chiếc SUV đa dụng với thiết kế hiện đại, nội thất rộng rãi và đầy đủ tính năng an toàn. Nó được trang bị động cơ mạnh mẽ và các công nghệ tiên tiến."
     },
     {
-      "id": 8,
       "product_name": "Honda CR-V",
       "category": "7",
       "image": "https://honda-danang.com/wp-content/uploads/2022/04/116292254_4118963171507881_3369131684964007123_n-1.jpg",
-      "quantity": 2,
+      "quantity": 1,
       "price": 1345000000,
       "form": "Japans",
-      "description": "Honda CR-V là một chiếc SUV đa dụng với không gian nội thất rộng rãi và các tính năng tiện nghi. Nó mang lại trải nghiệm lái êm ái và tin cậy."
+      "description": "Honda CR-V là một chiếc SUV đa dụng với không gian nội thất rộng rãi và các tính năng tiện nghi. Nó mang lại trải nghiệm lái êm ái và tin cậy.",
+      "id": 8
     },
     {
       "id": 9,
       "product_name": "Nissan X-Trail",
       "category": "7",
       "image": "https://nissantayho.vn/wp-content/uploads/2019/08/nissan-xtrail-white.png",
-      "quantity": 0,
+      "quantity": 18,
       "price": 990000000,
       "form": "Japans",
       "description": "Nissan X-Trail là một chiếc SUV gia đình với kiểu dáng hiện đại và không gian nội thất rộng rãi. Nó được trang bị động cơ hiệu suất cao và hệ thống an toàn tiên tiến."
     },
     {
-      "id": 10,
       "product_name": "Honda Odyssey",
       "category": "5",
       "image": "https://vcdn-vnexpress.vnecdn.net/2020/11/07/Honda-Odyssey-1-3971-1604720211.jpg?w=0&h=0&q=100&dpr=1&fit=crop&s=YhrEfiof-IJnazNzK1yVQg",
-      "quantity": 3,
+      "quantity": 6,
       "price": 2354316000,
       "form": "Japans",
-      "description": " Honda Odyssey là một chiếc Minivan hàng đầu với thiết kế hiện đại và không gian nội thất rộng rãi. Xe có khả năng chở được 7 đến 8 hành khách, với các hàng ghế linh hoạt có thể gập lại để tăng không gian hành lý. Honda Odyssey được trang bị động cơ mạnh mẽ, hệ thống lái ổn định và nhiều tính năng an toàn tiên tiến như hệ thống cảnh báo va chạm, hỗ trợ đỗ xe và cảnh báo lệch làn đường."
-    },
-    {
-      "id": 2,
-      "product_name": "Ami",
-      "category": "1",
-      "image": "https://deals.carwow.co.uk/image?filter%5Bangle%5D=front&filter%5Bbrand_slug%5D=citroen&filter%5Bmodel_review_slug%5D=ami-2022&filter%5Bsize%5D=medium",
-      "quantity": 1,
-      "form": "Germany",
-      "price": 227696884,
-      "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Expedita voluptatum dolor neque nihil non debitis molestias quas animi, quidem, at aperiam doloremque libero quos iste laborum quibusdam totam eaque nam? Eos placeat ut rem maxime vitae sunt architecto cumque incidunt quia esse deserunt nobis explicabo impedit, nostrum eaque itaque quae earum ratione quo neque debitis magni autem accusamus? Aspernatur, fuga.Quae excepturi soluta beatae quis quia modi et molestias blanditiis repellendus unde, mollitia earum sint id sequi iure minima placeat ratione eaque aliquid nisi. Amet voluptate aut tempore incidunt accusamus."
+      "description": " Honda Odyssey là một chiếc Minivan hàng đầu với thiết kế hiện đại và không gian nội thất rộng rãi. Xe có khả năng chở được 7 đến 8 hành khách, với các hàng ghế linh hoạt có thể gập lại để tăng không gian hành lý. Honda Odyssey được trang bị động cơ mạnh mẽ, hệ thống lái ổn định và nhiều tính năng an toàn tiên tiến như hệ thống cảnh báo va chạm, hỗ trợ đỗ xe và cảnh báo lệch làn đường.",
+      "id": 10
     }
   ],
   "categories": [
@@ -188,26 +168,46 @@
       "cart": [
         {
           "idSP": 3,
-          "quantity": 2
-        }
-      ],
-      "total": 974460000,
-      "accept": 1,
-      "id": 1
-    },
-    {
-      "userId": 5,
-      "cart": [
-        {
-          "idSP": 3,
-          "quantity": 2
+          "quantity": 1
         },
         {
           "idSP": 4,
           "quantity": 1
+        },
+        {
+          "idSP": 5,
+          "quantity": 1
+        },
+        {
+          "idSP": 8,
+          "quantity": 1
+        },
+        {
+          "idSP": 9,
+          "quantity": 1
         }
       ],
-      "total": 2573559900,
+      "total": 4865329900,
+      "accept": -1,
+      "id": 1
+    },
+    {
+      "userId": 4,
+      "cart": [
+        {
+          "idSP": 3,
+          "quantity": 1
+        },
+        {
+          "idSP": 4,
+          "quantity": 1
+        },
+        {
+          "idSP": 5,
+          "quantity": 1
+        }
+      ],
+      "total": 4865329900,
       "accept": -1,
       "id": 2
     }

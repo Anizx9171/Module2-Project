@@ -7,7 +7,7 @@ import PreLoader from "./../../components/PreLoader";
 import { getDataProducts } from "./../../api/getAPI";
 import axios from "axios";
 import { FomatMoney } from "../../utils/FomatData";
-import { Modal, notification } from "antd";
+import { Modal, Pagination, notification } from "antd";
 
 export default function Cart() {
   const navigate = useNavigate();
@@ -49,6 +49,21 @@ export default function Cart() {
       });
     });
   }
+
+  const [currentPage, setCurrentPage] = useState(1);
+  const pageSize = 3;
+  const totalOders = productInCart.length;
+  const totalPages = Math.ceil(totalOders / pageSize);
+
+  // Tạo mảng oders cho trang hiện tại
+  const currentOders = productInCart.slice(
+    (currentPage - 1) * pageSize,
+    currentPage * pageSize
+  );
+
+  const handlePageChange = (page) => {
+    setCurrentPage(page);
+  };
 
   const handleChangeQuantity = (qty, proid) => {
     const index = cartUser.cart.findIndex((pr) => pr.idSP == proid);
@@ -104,57 +119,48 @@ export default function Cart() {
   };
 
   const handleCheckOut = async () => {
-    const { id, ...data } = cartUser;
-    await cartUser.cart.map((ca) => {
-      products.map(async (pr) => {
-        if (ca.idSP == pr.id) {
-          pr.quantity -= ca.quantity;
-          await axios
-            .put(`http://localhost:9171/products/${pr.id}`, pr)
-            .then((response) => console.log("sửa ok"))
-            .catch((err) => console.log(err));
-        }
-      });
-    });
+    const { id, cart, userId } = cartUser;
 
-    setLoad(true);
-    await axios
-      .put(`http://localhost:9171/carts/${cartId}`, {
-        ...cartUser,
-        cart: [],
-      })
-      .then((response) => {
-        setCartUser(response.data);
-        notification.success({
-          message: "Payment success",
-          description: "The order of the waiting line",
+    console.log(id, cart, userId);
+
+    try {
+      for (let i = 0; i < cart.length; i++) {
+        const resPro = await axios.get(
+          `http://localhost:9171/products/${cart[i].idSP}`
+        );
+        const proInfo = resPro.data;
+        await axios.patch(`http://localhost:9171/products/${cart[i].idSP}`, {
+          quantity: proInfo.quantity - cart[i].quantity,
         });
-      })
-      .catch((error) => {
-        if (error.response) {
-          // Phản hồi lỗi từ máy chủ (status code không phải 2xx)
-          console.log(error.response.data);
-          console.log(error.response.status);
-          console.log(error.response.headers);
-        } else if (error.request) {
-          // Không nhận được phản hồi từ máy chủ
-          console.log(error.request);
-        } else {
-          // Có lỗi xảy ra khi thiết lập yêu cầu
-          console.log("Error", error.message);
-        }
-        console.log(error.config);
-      });
+      }
 
-    axios
-      .post(`http://localhost:9171/oders/`, {
-        ...data,
+      await axios.post(`http://localhost:9171/oders`, {
+        userId: userId,
+        cart: cart,
         total: sum,
         accept: 0,
-      })
-      .then(console.log("ok"))
-      .catch((err) => notification.error({ message: "Có lỗi đã sẩy ra" }))
-      .finally(() => setLoad(false));
+      });
+
+      await axios.patch(`http://localhost:9171/carts/${id}`, {
+        cart: [],
+      });
+
+      notification.success({
+        message: "oke",
+        description: "oke",
+      });
+
+      setCartUser((pre) => ({
+        ...pre,
+        cart: [],
+      }));
+    } catch (error) {
+      console.log(error);
+      notification.success({
+        message: "that bai",
+        description: "that bai",
+      });
+    }
   };
 
   useEffect(() => {
@@ -209,7 +215,7 @@ export default function Cart() {
                     </tr>
                   </thead>
                   <tbody>
-                    {productInCart.map((pro) => {
+                    {currentOders.map((pro) => {
                       sum += pro.price * pro.quantity;
                       return (
                         <tr key={pro.id}>
@@ -264,6 +270,16 @@ export default function Cart() {
                     })}
                   </tbody>
                   <tfoot>
+                    <tr>
+                      <td colSpan={7} className="text-center p-2">
+                        <Pagination
+                          current={currentPage}
+                          pageSize={pageSize}
+                          total={totalOders}
+                          onChange={handlePageChange}
+                        />
+                      </td>
+                    </tr>
                     <tr>
                       <td colSpan={3} className="cursor-pointer">
                         <Link to="/shop">back to shop</Link>

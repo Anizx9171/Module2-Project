@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import SlidebarA from "../../components/Admin/SlidebarA";
 import HeaderA from "../../components/Admin/HeaderA";
 import { FomatMoney } from "./../../utils/FomatData";
-import { Button } from "antd";
+import { Button, Pagination } from "antd";
 import axios from "axios";
 import PreLoader from "../../components/PreLoader";
 
@@ -11,21 +11,34 @@ export default function Oder_Manager() {
   const [products, setProducts] = useState([]);
   const [load, setLoad] = useState(false);
 
+  const [currentPage, setCurrentPage] = useState(1);
+  const pageSize = 10;
+  const totalOders = oders.length;
+  const totalPages = Math.ceil(totalOders / pageSize);
+
+  // Tạo mảng oders cho trang hiện tại
+  const currentOders = oders.slice(
+    (currentPage - 1) * pageSize,
+    currentPage * pageSize
+  );
+
+  const handlePageChange = (page) => {
+    setCurrentPage(page);
+  };
+
   const handleDeny = async (odr) => {
     const { id, ...data } = odr;
     const index = oders.findIndex((e) => e.id == id);
 
-    await data.cart.map((od) => {
-      products.map(async (pro) => {
-        if (pro.id == od.idSP) {
-          pro.quantity += od.quantity;
-          await axios
-            .put(`http://localhost:9171/products/${pro.id}`, pro)
-            .then(console.log((response) => "ok"))
-            .catch(console.log((error) => "ko"));
-        }
+    for (let i = 0; i < data.cart.length; i++) {
+      const resPro = await axios.get(
+        `http://localhost:9171/products/${data.cart[i].idSP}`
+      );
+      const proInfo = resPro.data;
+      await axios.patch(`http://localhost:9171/products/${data.cart[i].idSP}`, {
+        quantity: proInfo.quantity + data.cart[i].quantity,
       });
-    });
+    }
 
     setLoad(true);
     await axios
@@ -84,7 +97,7 @@ export default function Oder_Manager() {
               </tr>
             </thead>
             <tbody>
-              {oders.map((od, i) => {
+              {currentOders.map((od, i) => {
                 let proIdPaint = "";
                 od.cart.map((pr) => {
                   proIdPaint += ` ,#${pr.idSP}`;
@@ -136,6 +149,14 @@ export default function Oder_Manager() {
               })}
             </tbody>
           </table>
+          <div>
+            <Pagination
+              current={currentPage}
+              pageSize={pageSize}
+              total={totalOders}
+              onChange={handlePageChange}
+            />
+          </div>
         </div>
       </div>
     </>

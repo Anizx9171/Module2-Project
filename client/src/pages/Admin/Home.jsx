@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import SlidebarA from "../../components/Admin/SlidebarA";
 import {
+  dataAll,
   getDataCategories,
   getDataProducts,
   getDataUsers,
@@ -17,6 +18,7 @@ export default function Home() {
   const [users, setUsers] = useState([]);
   const [products, setProducts] = useState([]);
   const [categories, setCategories] = useState([]);
+  const [oders, setOders] = useState([]);
   const [load, setLoad] = useState(false);
   useEffect(() => {
     setLoad(true);
@@ -28,6 +30,11 @@ export default function Home() {
       .catch((error) => console.log(error));
     getDataCategories()
       .then((response) => setCategories(response.data))
+      .catch((error) => console.log(error))
+      .finally(() => setLoad(false));
+    dataAll
+      .get("http://localhost:9171/oders")
+      .then((response) => setOders(response.data))
       .catch((error) => console.log(error))
       .finally(() => setLoad(false));
   }, []);
@@ -69,7 +76,7 @@ export default function Home() {
               <h1 className="text-end text-4xl">Oder history</h1>
               <div className="flex items-center justify-center">
                 <div className="bg-red-700 w-4/5 h-52 mt-2 flex justify-center items-center rounded-md">
-                  <h1 className="text-5xl text-white">99999999999</h1>
+                  <h1 className="text-5xl text-white">{oders.length}</h1>
                 </div>
               </div>
             </div>

@@ -1,10 +1,12 @@
 import React, { useEffect, useState } from "react";
 import Headerr from "./../../components/User/Headerr";
-import { Button, notification } from "antd";
+import { Button, Input, Pagination, notification } from "antd";
 import { useNavigate } from "react-router-dom";
 import axios from "axios";
 import PreLoader from "./../../components/PreLoader";
 import { FomatMoney } from "./../../utils/FomatData";
+import { searchDataOder } from "../../api/getAPI";
+import { SearchOutlined } from "@ant-design/icons";
 
 export default function History() {
   const navigate = useNavigate();
@@ -15,20 +17,34 @@ export default function History() {
   const [oders, setOders] = useState([]);
   const [products, setProducts] = useState([]);
   const [load, setLoad] = useState(false);
+  const [textSearch, setTextSearch] = useState("");
+
+  const [currentPage, setCurrentPage] = useState(1);
+  const pageSize = 10;
+  const totalOders = oders.length;
+  const totalPages = Math.ceil(totalOders / pageSize);
+
+  // Tạo mảng oders cho trang hiện tại
+  const currentOders = oders.slice(
+    (currentPage - 1) * pageSize,
+    currentPage * pageSize
+  );
+
+  const handlePageChange = (page) => {
+    setCurrentPage(page);
+  };
 
   const handleDeleteOder = async (oderDel) => {
     const { id, ...data } = oderDel;
-    await data.cart.map((od) => {
-      products.map(async (pro) => {
-        if (pro.id == od.idSP) {
-          pro.quantity += od.quantity;
-          await axios
-            .put(`http://localhost:9171/products/${pro.id}`, pro)
-            .then(console.log((response) => "ok"))
-            .catch(console.log((error) => "ko"));
-        }
+    for (let i = 0; i < data.cart.length; i++) {
+      const resPro = await axios.get(
+        `http://localhost:9171/products/${data.cart[i].idSP}`
+      );
+      const proInfo = resPro.data;
+      await axios.patch(`http://localhost:9171/products/${data.cart[i].idSP}`, {
+        quantity: proInfo.quantity + data.cart[i].quantity,
       });
-    });
+    }
     setLoad(true);
     await axios
       .delete(`http://localhost:9171/oders/${id}`)
@@ -72,7 +88,10 @@ export default function History() {
       {load && <PreLoader />}
       <Headerr />
       <div>
-        <div className="flex flex-col items-center">
+        <div
+          style={{ height: "85vh" }}
+          className="flex flex-col items-center justify-between"
+        >
           <table className="w-11/12">
             <thead>
               <tr className="bg-gray-300">
@@ -85,7 +104,7 @@ export default function History() {
               </tr>
             </thead>
             <tbody>
-              {oders.map((od, i) => {
+              {currentOders.map((od, i) => {
                 let namePr = "";
                 od.cart.map((c) => {
                   products.map((pr) => {
@@ -119,6 +138,14 @@ export default function History() {
               })}
             </tbody>
           </table>
+          <div>
+            <Pagination
+              current={currentPage}
+              pageSize={pageSize}
+              total={totalOders}
+              onChange={handlePageChange}
+            />
+          </div>
         </div>
       </div>
     </>
