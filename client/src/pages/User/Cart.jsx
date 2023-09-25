@@ -146,8 +146,8 @@ export default function Cart() {
       });
 
       notification.success({
-        message: "oke",
-        description: "oke",
+        message: "Buy successfully",
+        description: "You can check the order in the History section",
       });
 
       setCartUser((pre) => ({
@@ -157,8 +157,8 @@ export default function Cart() {
     } catch (error) {
       console.log(error);
       notification.success({
-        message: "that bai",
-        description: "that bai",
+        message: "err",
+        description: "err",
       });
     }
   };

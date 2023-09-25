@@ -103,12 +103,7 @@ export default function Sign_In() {
             .catch((err) => {});
         }
       })
-      .catch((error) => {
-        notification.error({
-          message: "Có lỗi sảy ra vui lòng liên hệ admin",
-          placement: "bottomLeft",
-        });
-      });
+      .catch((error) => {});
   };
 
   const handleOnChange = (e) => {

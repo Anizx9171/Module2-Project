@@ -43,7 +43,7 @@
       "product_name": "Mazda2 1.5 Sedan",
       "category": "2",
       "image": "https://heyoto.vn/wp-content/uploads/2020/04/Mazda-2-Sport-m%C3%A0u-Eternal-Blue.jpg",
-      "quantity": -2,
+      "quantity": -1,
       "price": 487230000,
       "form": "Europe",
       "description": "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Fugit numquam et qui quo delectus provident velit. Aut alias dolorem sapiente magnam beatae dolore ipsum quaerat neque nemo ipsam, eveniet placeat. Rem, fugiat cum nobis explicabo sunt optio consequuntur praesentium eaque ad obcaecati, vitae sapiente iure pariatur sed eius laboriosam perspiciatis a voluptas quidem soluta quas in. Hic beatae temporibus totam.",
@@ -74,7 +74,7 @@
       "product_name": "Hyundai Santa Fe",
       "category": "7",
       "image": "https://hyundaingocan.com/wp-content/uploads/2020/07/Hyundai-Santafe-2021-m%C3%A0u-tr%E1%BA%AFng.png.webp",
-      "quantity": 2,
+      "quantity": 1,
       "price": 2779000000,
       "form": "Korea",
       "description": " Hyundai Santa Fe là một chiếc SUV đa dụng với thiết kế hiện đại, nội thất rộng rãi và đầy đủ tính năng an toàn. Nó được trang bị động cơ mạnh mẽ và các công nghệ tiên tiến."
@@ -83,7 +83,7 @@
       "product_name": "Honda CR-V",
       "category": "7",
       "image": "https://honda-danang.com/wp-content/uploads/2022/04/116292254_4118963171507881_3369131684964007123_n-1.jpg",
-      "quantity": 1,
+      "quantity": 0,
       "price": 1345000000,
       "form": "Japans",
       "description": "Honda CR-V là một chiếc SUV đa dụng với không gian nội thất rộng rãi và các tính năng tiện nghi. Nó mang lại trải nghiệm lái êm ái và tin cậy.",
@@ -94,7 +94,7 @@
       "product_name": "Nissan X-Trail",
       "category": "7",
       "image": "https://nissantayho.vn/wp-content/uploads/2019/08/nissan-xtrail-white.png",
-      "quantity": 18,
+      "quantity": 16,
       "price": 990000000,
       "form": "Japans",
       "description": "Nissan X-Trail là một chiếc SUV gia đình với kiểu dáng hiện đại và không gian nội thất rộng rãi. Nó được trang bị động cơ hiệu suất cao và hệ thống an toàn tiên tiến."
@@ -210,6 +210,34 @@
       "total": 4865329900,
       "accept": -1,
       "id": 2
+    },
+    {
+      "userId": 2,
+      "cart": [
+        {
+          "idSP": 4,
+          "quantity": 1
+        },
+        {
+          "idSP": 5,
+          "quantity": 1
+        },
+        {
+          "idSP": 6,
+          "quantity": 1
+        },
+        {
+          "idSP": 8,
+          "quantity": 1
+        },
+        {
+          "idSP": 9,
+          "quantity": 2
+        }
+      ],
+      "total": 3325000000,
+      "accept": 1,
+      "id": 3
     }
   ]
 }

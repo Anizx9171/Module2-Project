@@ -5,7 +5,6 @@ import { useNavigate } from "react-router-dom";
 import axios from "axios";
 import PreLoader from "./../../components/PreLoader";
 import { FomatMoney } from "./../../utils/FomatData";
-import { searchDataOder } from "../../api/getAPI";
 import { SearchOutlined } from "@ant-design/icons";
 
 export default function History() {
@@ -105,16 +104,8 @@ export default function History() {
             </thead>
             <tbody>
               {currentOders.map((od, i) => {
-                let namePr = "";
-                od.cart.map((c) => {
-                  products.map((pr) => {
-                    if (c.idSP == pr.id) {
-                      namePr += `; ${pr.product_name}, quantity: ${c.quantity}`;
-                    }
-                  });
-                });
                 return (
-                  <tr key={od.id}>
+                  <tr key={od.id} className="border-t">
                     <td className="text-center">
                       {od.accept == 0 && (
                         <Button onClick={() => handleDeleteOder(od)}>
@@ -130,7 +121,31 @@ export default function History() {
                         : "Application is not accepted"}
                     </td>
                     <td className="text-center">{FomatMoney(od.total)}</td>
-                    <td className="text-left">{namePr}</td>
+                    <td className="text-left">
+                      <ul>
+                        {od.cart.map((c) => {
+                          return products.map((pr) => {
+                            if (c.idSP == pr.id) {
+                              return (
+                                <li className="flex items-center gap-1 justify-end">
+                                  <b className="text-red-600">{c.quantity}</b>
+                                  :quantity ,
+                                  <b className="text-red-600">
+                                    {pr.product_name}
+                                  </b>
+                                  <img
+                                    src={pr.image}
+                                    alt=""
+                                    className="block w-10 h-10"
+                                  />
+                                  +
+                                </li>
+                              );
+                            }
+                          });
+                        })}
+                      </ul>
+                    </td>
                     <td className="text-center">#{od.id}</td>
                     <td className="text-center">{i + 1}</td>
                   </tr>

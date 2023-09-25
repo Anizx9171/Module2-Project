@@ -98,23 +98,19 @@ export default function Oder_Manager() {
             </thead>
             <tbody>
               {currentOders.map((od, i) => {
-                let proIdPaint = "";
-                od.cart.map((pr) => {
-                  proIdPaint += ` ,#${pr.idSP}`;
-                });
                 return (
                   <tr
                     className="bg-white border-b dark:bg-gray-900 dark:border-gray-700"
                     key={od.id}
                   >
-                    <td className="flex gap-3 justify-center">
+                    <td className="text-center">
                       {od.accept == 0 && (
                         <>
                           <Button
                             type="primary"
                             danger
                             ghost
-                            className="p-1"
+                            className="p-1 ml-3"
                             onClick={() => handleDeny(od)}
                           >
                             Deny
@@ -139,7 +135,17 @@ export default function Oder_Manager() {
                     </td>
                     <td className="text-center">{FomatMoney(od.total)}</td>
                     <td>
-                      <ul>{proIdPaint}</ul>
+                      <ul>
+                        {od.cart.map((pr) => {
+                          return (
+                            <li>
+                              Id product:{" "}
+                              <b className="text-red-600">{pr.idSP}</b>, Count:{" "}
+                              <b className="text-red-600">{pr.quantity}</b>
+                            </li>
+                          );
+                        })}
+                      </ul>
                     </td>
                     <td className="text-center">#{od.userId}</td>
                     <td className="text-center">#{od.id}</td>
