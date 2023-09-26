@@ -16,6 +16,8 @@ import Product_Manager from "./pages/Admin/Product_Manager";
 import Category_Manager from "./pages/Admin/Category_Manager";
 import ProviderU from "./pages/providerU";
 import History from "./pages/User/History";
+import { BackTop, Button } from "antd";
+import { CaretUpOutlined, UpOutlined } from "@ant-design/icons";
 
 function App() {
   return (
@@ -41,6 +43,11 @@ function App() {
           <Route path="categories" element={<Category_Manager />} />
         </Route>
       </Routes>
+      <BackTop>
+        <Button className="flex justify-center items-center w-10 h-10 ">
+          <UpOutlined />
+        </Button>
+      </BackTop>
     </>
   );
 }

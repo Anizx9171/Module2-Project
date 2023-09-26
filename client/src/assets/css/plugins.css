@@ -26645,3 +26645,7 @@ a.pswp__share--download:hover {
 .pswp--minimal--dark .pswp__top-bar {
 	background: none
 }
+
+.ant-back-top {
+	right: 20px;
+}

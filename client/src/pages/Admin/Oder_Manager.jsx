@@ -141,7 +141,7 @@ export default function Oder_Manager() {
                             <li>
                               Id product:{" "}
                               <b className="text-red-600">{pr.idSP}</b>, Count:{" "}
-                              <b className="text-red-600">{pr.quantity}</b>
+                              <b className="text-red-600">{pr.quantity}</b> +
                             </li>
                           );
                         })}

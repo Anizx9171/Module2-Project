@@ -190,6 +190,7 @@ export default function Product_Manager() {
               onCancel={handleCancel}
               maskClosable={false}
               style={{ marginTop: -100 }}
+              okType="default"
             >
               <form className="p-2">
                 <div>

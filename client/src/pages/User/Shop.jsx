@@ -44,7 +44,14 @@ export default function Shop() {
       notification.warning({ message: "Sign fist" });
       return;
     }
+    const productCheck = products.find((pro) => pro.id == id);
     const cart = cartUser.cart;
+    if (productCheck.quantity <= 0) {
+      notification.warning({
+        message: "Products sold out",
+      });
+      return;
+    }
 
     const index = cart.findIndex((sp) => sp.idSP == id);
     if (index == -1) {
@@ -61,7 +68,6 @@ export default function Shop() {
         });
       }
     } else {
-      const productCheck = products.find((pro) => pro.id == id);
       cart[index].quantity = Number(cart[index].quantity) + 1;
       if (Number(cart[index].quantity) <= Number(productCheck.quantity)) {
         const res = await axios.patch(`http://localhost:9171/carts/${cartId}`, {

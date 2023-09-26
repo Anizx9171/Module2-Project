@@ -128,6 +128,12 @@ export default function Cart() {
         const resPro = await axios.get(
           `http://localhost:9171/products/${cart[i].idSP}`
         );
+        if (resPro.data.quantity <= 0) {
+          notification.warning({
+            message: `Products ${resPro.data.product_name} sold out`,
+          });
+          return;
+        }
         const proInfo = resPro.data;
         await axios.patch(`http://localhost:9171/products/${cart[i].idSP}`, {
           quantity: proInfo.quantity - cart[i].quantity,
@@ -172,6 +178,7 @@ export default function Cart() {
       .then((response) => setProducts(response.data))
       .finally(() => setLoad(false));
   }, []);
+
   return (
     <>
       {load && <PreLoader />}

@@ -7,7 +7,8 @@
       "full_name": "Anime Funny Vn",
       "role": 1,
       "banned_state": false,
-      "id": 2
+      "id": 2,
+      "banned": false
     },
     {
       "email": "tuananhwibu9171@gmail.com",
@@ -36,6 +37,24 @@
       "role": 1,
       "banned_state": false,
       "id": 5
+    },
+    {
+      "email": "anh24012005@gmail.com",
+      "password": "$2a$10$568JLTkU35ek/rW9YMclsulgL8.j4coboVmWNAoC2WDKI4n/VzcNq",
+      "full_name": "Lê Tuấn Anh",
+      "role": 1,
+      "banned_state": false,
+      "avatar": "https://icon-library.com/images/default-user-icon/default-user-icon-29.jpg",
+      "id": 6
+    },
+    {
+      "email": "longha@gmail.com",
+      "password": "$2a$10$qoCo3oMKyI0ETFwi/HFCme1URheRgpjc0GtwYdZI8uM5KGQlG4Dt2",
+      "full_name": "long ha",
+      "role": 1,
+      "banned_state": false,
+      "avatar": "https://icon-library.com/images/default-user-icon/default-user-icon-29.jpg",
+      "id": 7
     }
   ],
   "products": [
@@ -43,7 +62,7 @@
       "product_name": "Mazda2 1.5 Sedan",
       "category": "2",
       "image": "https://heyoto.vn/wp-content/uploads/2020/04/Mazda-2-Sport-m%C3%A0u-Eternal-Blue.jpg",
-      "quantity": -1,
+      "quantity": 97,
       "price": 487230000,
       "form": "Europe",
       "description": "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Fugit numquam et qui quo delectus provident velit. Aut alias dolorem sapiente magnam beatae dolore ipsum quaerat neque nemo ipsam, eveniet placeat. Rem, fugiat cum nobis explicabo sunt optio consequuntur praesentium eaque ad obcaecati, vitae sapiente iure pariatur sed eius laboriosam perspiciatis a voluptas quidem soluta quas in. Hic beatae temporibus totam.",
@@ -53,7 +72,7 @@
       "product_name": "Mercedes-Benz C-Class",
       "category": "3",
       "image": "https://imgd.aeplcdn.com/664x374/n/cw/ec/116201/new-c-class-exterior-right-front-three-quarter-2.jpeg?isig=0&q=80&q=80",
-      "quantity": -5,
+      "quantity": 997,
       "price": 1599099900,
       "form": "Germany",
       "description": "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Fugit numquam et qui quo delectus provident velit. Aut alias dolorem sapiente magnam beatae dolore ipsum quaerat neque nemo ipsam, eveniet placeat. Rem, fugiat cum nobis explicabo sunt optio consequuntur praesentium eaque ad obcaecati, vitae sapiente iure pariatur sed eius laboriosam perspiciatis a voluptas quidem soluta quas in. Hic beatae temporibus totam.",
@@ -63,7 +82,7 @@
       "product_name": "BMW 4 Series Coupe",
       "category": "3",
       "image": "https://www.bmw.ca/content/dam/bmw/common/all-models/4-series/coupe/2021/navigation/bmw-4-series-coupe-modelfinder.png",
-      "quantity": 2,
+      "quantity": 20,
       "price": 2779000000,
       "form": "Germany",
       "description": "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Fugit numquam et qui quo delectus provident velit. Aut alias dolorem sapiente magnam beatae dolore ipsum quaerat neque nemo ipsam, eveniet placeat. Rem, fugiat cum nobis explicabo sunt optio consequuntur praesentium eaque ad obcaecati, vitae sapiente iure pariatur sed eius laboriosam perspiciatis a voluptas quidem soluta quas in. Hic beatae temporibus totam.",
@@ -74,7 +93,7 @@
       "product_name": "Hyundai Santa Fe",
       "category": "7",
       "image": "https://hyundaingocan.com/wp-content/uploads/2020/07/Hyundai-Santafe-2021-m%C3%A0u-tr%E1%BA%AFng.png.webp",
-      "quantity": 1,
+      "quantity": 8,
       "price": 2779000000,
       "form": "Korea",
       "description": " Hyundai Santa Fe là một chiếc SUV đa dụng với thiết kế hiện đại, nội thất rộng rãi và đầy đủ tính năng an toàn. Nó được trang bị động cơ mạnh mẽ và các công nghệ tiên tiến."
@@ -83,7 +102,7 @@
       "product_name": "Honda CR-V",
       "category": "7",
       "image": "https://honda-danang.com/wp-content/uploads/2022/04/116292254_4118963171507881_3369131684964007123_n-1.jpg",
-      "quantity": 0,
+      "quantity": 9,
       "price": 1345000000,
       "form": "Japans",
       "description": "Honda CR-V là một chiếc SUV đa dụng với không gian nội thất rộng rãi và các tính năng tiện nghi. Nó mang lại trải nghiệm lái êm ái và tin cậy.",
@@ -103,7 +122,7 @@
       "product_name": "Honda Odyssey",
       "category": "5",
       "image": "https://vcdn-vnexpress.vnecdn.net/2020/11/07/Honda-Odyssey-1-3971-1604720211.jpg?w=0&h=0&q=100&dpr=1&fit=crop&s=YhrEfiof-IJnazNzK1yVQg",
-      "quantity": 6,
+      "quantity": 0,
       "price": 2354316000,
       "form": "Japans",
       "description": " Honda Odyssey là một chiếc Minivan hàng đầu với thiết kế hiện đại và không gian nội thất rộng rãi. Xe có khả năng chở được 7 đến 8 hành khách, với các hàng ghế linh hoạt có thể gập lại để tăng không gian hành lý. Honda Odyssey được trang bị động cơ mạnh mẽ, hệ thống lái ổn định và nhiều tính năng an toàn tiên tiến như hệ thống cảnh báo va chạm, hỗ trợ đỗ xe và cảnh báo lệch làn đường.",
@@ -143,7 +162,12 @@
   "carts": [
     {
       "userId": 2,
-      "cart": [],
+      "cart": [
+        {
+          "idSP": 10,
+          "quantity": 1
+        }
+      ],
       "id": 1
     },
     {
@@ -160,6 +184,16 @@
       "userId": 5,
       "cart": [],
       "id": 4
+    },
+    {
+      "userId": 6,
+      "cart": [],
+      "id": 5
+    },
+    {
+      "userId": 7,
+      "cart": [],
+      "id": 6
     }
   ],
   "oders": [
@@ -238,6 +272,102 @@
       "total": 3325000000,
       "accept": 1,
       "id": 3
+    },
+    {
+      "userId": 5,
+      "cart": [
+        {
+          "idSP": 10,
+          "quantity": 6
+        }
+      ],
+      "total": 14125896000,
+      "accept": 0,
+      "id": 4
+    },
+    {
+      "userId": 2,
+      "cart": [
+        {
+          "idSP": 4,
+          "quantity": 1
+        }
+      ],
+      "total": 1599099900,
+      "accept": 0,
+      "id": 5
+    },
+    {
+      "userId": 2,
+      "cart": [
+        {
+          "idSP": 3,
+          "quantity": 1
+        }
+      ],
+      "total": 487230000,
+      "accept": 0,
+      "id": 6
+    },
+    {
+      "userId": 2,
+      "cart": [
+        {
+          "idSP": 10,
+          "quantity": 1
+        }
+      ],
+      "total": 2354316000,
+      "accept": 0,
+      "id": 7
+    },
+    {
+      "userId": 4,
+      "cart": [
+        {
+          "idSP": 10,
+          "quantity": 1
+        }
+      ],
+      "total": 2354316000,
+      "accept": 0,
+      "id": 8
+    },
+    {
+      "userId": 6,
+      "cart": [
+        {
+          "idSP": 3,
+          "quantity": 1
+        },
+        {
+          "idSP": 4,
+          "quantity": 2
+        },
+        {
+          "idSP": 5,
+          "quantity": 1
+        }
+      ],
+      "total": 6464429800,
+      "accept": 1,
+      "id": 9
+    },
+    {
+      "userId": 7,
+      "cart": [
+        {
+          "idSP": 4,
+          "quantity": 7
+        },
+        {
+          "idSP": 5,
+          "quantity": 5
+        }
+      ],
+      "total": 25088699300,
+      "accept": -1,
+      "id": 10
     }
   ]
 }

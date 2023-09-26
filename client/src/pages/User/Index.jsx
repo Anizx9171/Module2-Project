@@ -227,7 +227,7 @@ export default function Index() {
                     <i className="cps cp-store" />
                   </div>
                   <div className="counter">
-                    <span className="counter-store">25</span>{" "}
+                    <span className="counter-store">100</span>{" "}
                     <span className="plus-sign">+</span>
                   </div>
                   <p className="text-uppercase">Years in Business</p>
@@ -239,7 +239,7 @@ export default function Index() {
                     <i className="cps cp-smile" />
                   </div>
                   <div className="counter">
-                    <span className="counter-clients">4784</span>{" "}
+                    <span className="counter-clients">0</span>{" "}
                     <span className="plus-sign">+</span>
                   </div>
                   <p className="text-uppercase">Happy Clients</p>
@@ -251,7 +251,7 @@ export default function Index() {
                     <i className="cps cp-taxi" />
                   </div>
                   <div className="counter">
-                    <span className="counter-rented">5174</span>{" "}
+                    <span className="counter-rented">9</span>{" "}
                     <span className="plus-sign">+</span>
                   </div>
                   <p className="text-uppercase">Car Repaired</p>
@@ -263,7 +263,7 @@ export default function Index() {
                     <i className="cps cp-star" />
                   </div>
                   <div className="counter">
-                    <span className="counter-world">4.9</span>
+                    <span className="counter-world">10.0</span>
                   </div>
                   <p className="text-uppercase">Rating</p>
                 </div>
